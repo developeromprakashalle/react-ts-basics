@@ -14,7 +14,9 @@ export default function NewGoal({ onAddGoals }: NewGoalProps) {
     const enteredSummary = summaryGoal.current!.value;
 
     event.currentTarget.reset();
-    onAddGoals(enteredGoal, enteredSummary);
+    if (enteredGoal.length > 0 && enteredSummary.length > 0) {
+      onAddGoals(enteredGoal, enteredSummary);
+    }
   }
 
   return (
